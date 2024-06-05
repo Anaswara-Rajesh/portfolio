@@ -12,8 +12,12 @@ import {
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
-import thumbnail from "../../components/assets/sample.jpeg";
-import thumbnail2 from "../../components/assets/sample2.jpeg";
+import thumbnail from "../../components/assets/project1.png";
+import thumbnail2 from "../../components/assets/project2.jpeg";
+import thumbnail3 from "../../components/assets/project3.jpeg";
+import thumbnail4 from "../../components/assets/project4.jpeg";
+import thumbnail5 from "../../components/assets/project5.jpeg";
+import thumbnail6 from "../../components/assets/project6.png";
 import WorkSliderBtns from "../../components/WorkSliderBtns";
 
 const projects = [
@@ -45,7 +49,7 @@ const projects = [
       { name: "RabbitMQ" },
       { name: "Microservices" },
     ],
-    image: thumbnail,
+    image: thumbnail2,
     live: "",
     github: "",
   },
@@ -62,7 +66,7 @@ const projects = [
       // { name: ".NET" },
       { name: "IndexedDB" },
     ],
-    image: thumbnail,
+    image: thumbnail3,
     live: "",
     github: "",
   },
@@ -80,7 +84,7 @@ const projects = [
       { name: "Serial Port Communication" },
       { name: "MQTT" },
     ],
-    image: thumbnail,
+    image: thumbnail4,
     live: "",
     github: "",
   },
@@ -98,7 +102,7 @@ const projects = [
       // { name: "TypeScript" },
       // { name: ".NET" },
     ],
-    image: thumbnail,
+    image: thumbnail5,
     live: "",
     github: "",
   },
@@ -109,7 +113,7 @@ const projects = [
     description:
       "Developed REST APIs for a home automation app using a microservice architecture with Node.js.",
     stack: [{ name: "Node.js" }, { name: "Microservices" }],
-    image: thumbnail,
+    image: thumbnail6,
     live: "",
     github: "",
   },
@@ -200,18 +204,18 @@ const Work = () => {
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
-                      {/* <div className="relative w-full h-full"> */}
-                        {/* <Image
+                      <div className="relative w-full h-full">
+                         <Image
                           src={project.image}
                           fill
                           className="object-cover"
                           alt=""
-                        /> */}
+                        />
 
-                        <div className="text-5xl leading-none font-extrabold text-transparent text-outline">
+                        {/* <div className="text-5xl leading-none font-extrabold text-transparent text-outline">
                           {project.category} project
-                        </div>
-                      {/* </div> */}
+                        </div> */}
+                      </div>
                     </div>
                   </SwiperSlide>
                 );
