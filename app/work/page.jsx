@@ -1,0 +1,232 @@
+"use client";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import Link from "next/link";
+import Image from "next/image";
+import thumbnail from "../../components/assets/sample.jpeg";
+import thumbnail2 from "../../components/assets/sample2.jpeg";
+import WorkSliderBtns from "../../components/WorkSliderBtns";
+
+const projects = [
+  {
+    num: "01",
+    category: "Fullstack",
+    title: "Project Management System (PMS)",
+    description:
+      "PMS is a software application or a combination of tools that help teams and project managers to plan, execute, monitor, and control project activities efficiently. It provides a centralized platform to manage resources, releases, sprints, timesheets, ensuring successful project delivery.",
+    stack: [
+      { name: "Nest.js" },
+      { name: "React" },
+      { name: "RESTful APIs" },
+      { name: "MongoDB" },
+    ],
+    image: thumbnail,
+    live: "",
+    github: "",
+  },
+  {
+    num: "02",
+    category: "Backend",
+    title: "Tutorial App",
+    description:
+      "Tutorial app is an online course provider, arranging coursework into sections and lessons that include videos and text notes. It has three types of users: super admin, institute, and student. Admins and institutes use the web app, while students use the mobile app. The app does not support offline viewing, but students can add courses to a favorite list.",
+    stack: [
+      { name: "Keycloak" },
+      { name: "Postgres" },
+      { name: "RabbitMQ" },
+      { name: "Microservices" },
+    ],
+    image: thumbnail,
+    live: "",
+    github: "",
+  },
+  {
+    num: "03",
+    category: "Frontend",
+    title: "Seaga Vending Machine Project",
+    description:
+      "Scrub Station is an inventory control solution ensuring secure access for authorized users. It features both machine-side and web-application sides. Authorized users can log in to the machine and perform actions like checkout, return, and product refills based on their privileges and the planogram. Transactions are executed through the lockers in the vending machine.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Redux" },
+      { name: "Bootstrap" },
+      // { name: ".NET" },
+      { name: "IndexedDB" },
+    ],
+    image: thumbnail,
+    live: "",
+    github: "",
+  },
+  {
+    num: "04",
+    category: "Frontend",
+    title: "HiL10 Vending Machine",
+    description:
+      "Developed an application using React Native, integrated with REST API for data management, MQTT for real-time communication, and serial communication for hardware interactions. Enhanced the user interface to be dynamic and interactive, ensuring a seamless user experience.",
+    stack: [
+      { name: "React Native" },
+      { name: "Redux" },
+      // { name: "Bootstrap" },
+      // { name: "CSS" },
+      { name: "Serial Port Communication" },
+      { name: "MQTT" },
+    ],
+    image: thumbnail,
+    live: "",
+    github: "",
+  },
+  {
+    num: "05",
+    category: "Frontend",
+    title: "Otohom Website",
+    description:
+      "Built a comprehensive Otohom website with an integrated admin panel. The admin panel allows for easy uploading and management of blogs and gallery images, which are dynamically reflected on the website. Ensured a user-friendly interface and smooth functionality, enhancing the overall user experience.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Redux" },
+      { name: "Bootstrap" },
+      { name: "CSS" },
+      // { name: "TypeScript" },
+      // { name: ".NET" },
+    ],
+    image: thumbnail,
+    live: "",
+    github: "",
+  },
+  {
+    num: "06",
+    category: "Backend",
+    title: "Otohom Pro",
+    description:
+      "Developed REST APIs for a home automation app using a microservice architecture with Node.js.",
+    stack: [{ name: "Node.js" }, { name: "Microservices" }],
+    image: thumbnail,
+    live: "",
+    github: "",
+  },
+];
+
+const Work = () => {
+  const [project, setProject] = useState(projects[0]);
+
+  const handleSlideChange = (swiper) => {
+    const currentIndex = swiper.activeIndex;
+    setProject(projects[currentIndex]);
+  };
+  return (
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
+      }}
+      className="min-h-[80vh] flex flex-col justify-center py-12 xl:px-0"
+    >
+      <div className="container mx-auto">
+        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
+          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
+            <div className="flex flex-col gap-[30px] h-[50%]">
+              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+                {project.num}
+              </div>
+              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
+                {project.title}
+              </h2>
+
+              <p className="text-white/60">{project.description}</p>
+
+              <ul className="flex gap-4">
+                {project.stack.map((item, index) => {
+                  return (
+                    <li key={index} className="text-xl text-accent">
+                      {item.name}
+
+                      {index !== project.stack.length - 1 && ","}
+                    </li>
+                  );
+                })}
+              </ul>
+
+              <div className="border border-white/20"></div>
+
+              <div className="flex items-center gap-4">
+                <Link href={project.live}>
+                  <TooltipProvider defaultDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent"></BsArrowUpRight>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Live Project</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+
+                <Link href={project.github}>
+                  <TooltipProvider defaultDuration={100}>
+                    <Tooltip>
+                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsGithub className="text-white text-3xl group-hover:text-accent"></BsGithub>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Github repository</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="w-full xl:w-[50%]">
+            <Swiper
+              spaceBetween={30}
+              slidesPerView={1}
+              className="xl:h-[520px] mb-12"
+              onSlideChange={handleSlideChange}
+            >
+              {projects.map((project, index) => {
+                return (
+                  <SwiperSlide key={index} className="w-full">
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
+
+                      {/* <div className="relative w-full h-full"> */}
+                        {/* <Image
+                          src={project.image}
+                          fill
+                          className="object-cover"
+                          alt=""
+                        /> */}
+
+                        <div className="text-5xl leading-none font-extrabold text-transparent text-outline">
+                          {project.category} project
+                        </div>
+                      {/* </div> */}
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+
+              <WorkSliderBtns
+                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles="bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all"
+              />
+            </Swiper>
+          </div>
+        </div>
+      </div>
+    </motion.section>
+  );
+};
+
+export default Work;
