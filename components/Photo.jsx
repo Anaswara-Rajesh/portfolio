@@ -13,7 +13,7 @@ const Photo = () => {
           transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
         }}
       >
-        <motion.div className="w-[298px] h-[298px] xl:w-[390px] xl:h-[390px] mix-blend-exclusion absolute">
+        <motion.div className="w-[298px] h-[298px] xl:w-[390px] xl:h-[390px] mix-blend-luminosity absolute">
           <Image
             src={Pic}
             priority
