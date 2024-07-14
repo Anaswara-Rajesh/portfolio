@@ -25,7 +25,7 @@ const Home = () => {
               highest standards.
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <a href="/files/ANASWARA_RAJESH_MERN_DEV.pdf" download>
+              <a href="/files/Anaswara_Rajesh_MERN.pdf" download>
                 <Button
                   variant="outline"
                   size="lg"

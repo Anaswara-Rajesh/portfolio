@@ -39,10 +39,10 @@ const Photo = () => {
             strokeLinecap="round"
             strokeLinejoin="round"
             initial={{ strokeDahArray: "24 10 0 0" }}
-            animate={{
-              strokeDasharray:["15 20 25 25", "16 25 92 72", "4 250 22 22"],
-              rotate:[120,360]
-            }}
+            // animate={{
+            //   strokeDasharray:["15 20 25 25", "16 25 92 72", "4 250 22 22"],
+            //   rotate:[120,360]
+            // }}
             transition={{
               duration:20,
               repeat:Infinity,

@@ -26,7 +26,7 @@ const projects = [
     category: "Fullstack",
     title: "Project Management System (PMS)",
     description:
-      "PMS is a software application or a combination of tools that help teams and project managers to plan, execute, monitor, and control project activities efficiently. It provides a centralized platform to manage resources, releases, sprints, timesheets, ensuring successful project delivery.",
+      "Developed a comprehensive Project Management System designed to streamline project planning, execution, monitoring, and control. The system provides a centralised platform to manage resources, releases, sprints, and timesheets, ensuring efficient and successful project delivery.",
     stack: [
       { name: "Nest.js" },
       { name: "React" },
@@ -42,7 +42,7 @@ const projects = [
     category: "Backend",
     title: "Tutorial App",
     description:
-      "Tutorial app is an online course provider, arranging coursework into sections and lessons that include videos and text notes. It has three types of users: super admin, institute, and student. Admins and institutes use the web app, while students use the mobile app. The app does not support offline viewing, but students can add courses to a favorite list.",
+      "Developed an online course platform offering a structured learning experience with videos and text notes, featuring distinct user roles: super admin, institute, and student.",
     stack: [
       { name: "Keycloak" },
       { name: "Postgres" },
@@ -58,7 +58,7 @@ const projects = [
     category: "Frontend",
     title: "Seaga Vending Machine Project",
     description:
-      "Scrub Station is an inventory control solution ensuring secure access for authorized users. It features both machine-side and web-application sides. Authorized users can log in to the machine and perform actions like checkout, return, and product refills based on their privileges and the planogram. Transactions are executed through the lockers in the vending machine.",
+      "Developed an inventory control solution, Scrub Station, providing secure access for authorized users to perform actions such as checkout, return, and product refills. The system includes both machine-side and web application components. ability to perform actions such as checkout, return, and product refills.",
     stack: [
       { name: "Next.js" },
       { name: "Redux" },
@@ -162,7 +162,7 @@ const Work = () => {
 
               <div className="border border-white/20"></div>
 
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <Link href={project.live}>
                   <TooltipProvider defaultDuration={100}>
                     <Tooltip>
@@ -188,7 +188,7 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="w-full xl:w-[50%]">
@@ -205,16 +205,12 @@ const Work = () => {
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
 
                       <div className="relative w-full h-full">
-                         <Image
+                        <Image
                           src={project.image}
                           fill
                           className="object-cover"
                           alt=""
                         />
-
-                        {/* <div className="text-5xl leading-none font-extrabold text-transparent text-outline">
-                          {project.category} project
-                        </div> */}
                       </div>
                     </div>
                   </SwiperSlide>
